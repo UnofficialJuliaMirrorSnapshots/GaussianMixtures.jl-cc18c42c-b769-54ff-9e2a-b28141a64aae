@@ -8,8 +8,19 @@ module GaussianMixtures
 using Distributions
 using PDMats
 using Clustering
-using JLD
+using JLD2
+using FileIO
 using Compat
+using Logging
+
+# define a more informative info level 
+const moreInfo = LogLevel(-1)   # Info is LogLevel( 0 )
+# if you want to see more info, set up a logger (outside of this module) like
+
+# using Logging
+# more_logger = ConsoleLogger(stderr, LogLevel(-1))
+# global_logger(more_logger)
+# use package...
 
 include("compat.jl")
 include("gmmtypes.jl")
